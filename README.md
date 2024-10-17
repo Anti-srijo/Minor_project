@@ -1,45 +1,100 @@
 # A Comparative Analysis of Classifiers for Medical Image Classification
 
-## Introduction
-This repository contains the code and documentation for a minor project conducted during the 6th semester by **Srijan Kumar**, **Sneha Singh** and **Jyoti Kumari**. The project focuses on performing a comparative analysis of various classifiers for medical image classification. The goal is to evaluate the performance of different machine learning algorithms in accurately classifying medical images, which can aid in the diagnosis and treatment of various diseases.
+### Group Members
+- Srijan Kumar (2029202)
+- Sneha Singh (2029203)
+- Jyoti Kumari (2029204)
+
+**Institution**: KIIT University | 2024
 
 ## Project Overview
-Medical image classification plays a crucial role in healthcare, enabling the identification and classification of diseases based on imaging data such as X-rays, CT scans, and MRI scans. The objective of this project is to explore and compare different classifiers in terms of their accuracy, efficiency, and robustness for medical image classification tasks.
 
-The project involves the following key steps:
+Medical image classification is critical in healthcare to diagnose and treat diseases accurately. Recent advancements in deep learning have made transfer learning a powerful tool for medical image classification. This project performs a comparative analysis of several deep learning classifiers using transfer learning on two medical image datasets: one focused on skin diseases and the other on skin cancer. The goal is to determine the most effective classifier for medical image classification tasks.
 
-1. **Data Collection**: Obtain a suitable dataset of medical images with corresponding ground truth labels. This dataset should encompass a variety of medical conditions for comprehensive analysis.
+## Datasets
 
-2. **Preprocessing**: Perform preprocessing techniques on the medical images to enhance their quality and remove any noise or artifacts. This step may involve resizing, cropping, denoising, and normalization.
+- **Dataset 1**: Contains images of various skin diseases, categorized into 10 classes.
+- **Dataset 2**: Comprises skin cancer images, categorized into 9 classes.
 
-3. **Feature Extraction**: Extract relevant features from the preprocessed medical images. This can include both handcrafted features and deep learning-based feature extraction techniques.
+## Methodology
 
-4. **Classifier Selection**: Implement and compare multiple classifiers commonly used for image classification, such as VGG 16, VGG 19, Inception V3, Inception ResNet V2, DenseNet
-121, DenseNet 201
+### Transfer Learning
+Transfer learning involves using a pre-trained model that has learned features from a large dataset and adapting it to solve a different problem. In this project, we apply transfer learning to several models for medical image classification.
 
-5. **Training and Evaluation**: Train each classifier using the extracted features and evaluate their performance on the test dataset. Metrics such as accuracy, precision, recall, and F1-score should be calculated to compare the classifiers.
+### Models Used
+We evaluated the following pre-trained models:
+1. VGG16
+2. VGG19
+3. InceptionV3
+4. Inception ResNet V2
+5. DenseNet121
+6. DenseNet201
 
-6. **Analysis and Comparison**: Analyze the results obtained from different classifiers and identify the strengths and weaknesses of each approach. Compare their performance in terms of accuracy, computational efficiency, and robustness to variations in medical image data.
+Each model's architecture was adapted using transfer learning techniques to handle the medical image classification tasks.
 
-7. **Documentation**: Document the entire project, including the dataset description, preprocessing techniques, feature extraction methods, classifier implementation details, and comparative analysis results.
+## Performance Metrics
 
+We evaluated the models using the following metrics:
 
-## Getting Started
-To reproduce the results of this project, follow the steps below:
+- **Accuracy**: Percentage of correctly classified images out of the total.
+- **Precision**: Proportion of correctly classified positive samples among all samples classified as positive.
+- **Recall**: Proportion of actual positive samples that were correctly classified.
+- **F1 Score**: Harmonic mean of precision and recall, providing a balanced accuracy measure.
+- **Kappa Score**: Measures agreement between predictions and actual classifications, accounting for chance agreement.
+- **Confusion Matrix**: Summarizes the performance of the classification models by detailing true positives, true negatives, false positives, and false negatives.
 
-1. Clone the repository using the following command:
-   ```
-   git clone https://github.com/Anti-srijo/Minor_project.git
-   ```
+## Results
 
-2. Set up the necessary dependencies and libraries required for running the code
+- **DenseNet201** achieved the highest accuracy across both datasets, demonstrating its strong ability to classify medical images.
+- **InceptionV3** and **DenseNet121** also performed well, with high accuracy and balanced precision, recall, and F1 scores.
+  
+### Summary of Results (Accuracy)
+- **Dataset 1**: DenseNet201 achieved the highest accuracy.
+- **Dataset 2**: DenseNet201 also outperformed other models in this dataset.
 
+Graphs and confusion matrices were generated for a detailed analysis of the classifiers' performance.
 
-## Link to the dataset used
-1. Skin Cancer ISIC
-    The skin cancer data. Contains 9 classes of skin cancer.
-    https://www.kaggle.com/datasets/nodoubttome/skin-cancer9-classesisic
-    
-2. Skin diseases image dataset
-    10 classes of skin diseases dataset
-    https://www.kaggle.com/datasets/ismailpromus/skin-diseases-image-dataset
+## Future Scope
+
+- Developing automated pipelines integrating transfer learning for medical image classification could reduce training time and resources, facilitating faster medical research and improved patient outcomes.
+- Future research could explore the application of transfer learning to other medical imaging modalities such as MRI, CT scans, and ultrasound.
+- Further improvements in model fine-tuning and dataset expansion could enhance the accuracy and efficiency of medical image analysis.
+
+## Setup & Installation
+
+### Prerequisites
+- Python 3.x
+- TensorFlow or PyTorch
+- Jupyter Notebook (optional)
+
+### Installation Steps
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/medical-image-classification.git
+    cd medical-image-classification
+    ```
+2. Install the required libraries:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3. Download the datasets (Dataset 1 & Dataset 2) and place them in the appropriate directories.
+
+4. Run the Jupyter notebooks or Python scripts to start the training and evaluation process:
+    ```bash
+    jupyter notebook analysis.ipynb
+    ```
+
+## Usage
+
+1. Ensure that the datasets are properly loaded and pre-processed.
+2. Select the desired model (VGG16, DenseNet121, etc.) for training and evaluation.
+3. The system will automatically output the accuracy, precision, recall, F1 score, and confusion matrix for each model.
+4. Visualizations of model performance, including accuracy graphs and confusion matrices, will be generated.
+
+## References
+
+1. R. Singh Chugh, V. Bhatia, K. Khanna, V. Bhatia, "A Comparative Analysis of Classifiers for Image Classification."
+2. Z. Lai, H. Deng, "Medical Image Classification Based on Deep Features Extracted by Deep Model and Statistic Feature Fusion with Multilayer Perceptron."
+3. M. Xin, Y. Wang, "Research on Image Classification Model Based on Deep Convolution Neural Network."
+
+---
